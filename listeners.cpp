@@ -9,7 +9,7 @@ void lib_foo_init() {
     std::cerr << "Library was initialized\n";
 }
 
-class testCaseListener : public Catch::EventListenerBase {
+class testRunListener : public Catch::EventListenerBase {
 public:
     using Catch::EventListenerBase::EventListenerBase;
 
@@ -18,7 +18,7 @@ public:
     }
 };
 
-CATCH_REGISTER_LISTENER(testCaseListener)
+CATCH_REGISTER_LISTENER(testRunListener)
 
 TEST_CASE("sample test case") {
     std::cerr << "Test case started\n";

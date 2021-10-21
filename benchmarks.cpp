@@ -5,13 +5,13 @@
 static int factorial(int n) { return n <= 1 ? 1 : n * factorial(n - 1); }
 
 TEST_CASE("Simple benchmark") {
-    BENCHMARK("factorial 12") {
-        return factorial(12); // <-- returned values are not optimized away
+    BENCHMARK("factorial 30") {
+        return factorial(30); // <-- returned values are not optimized away
     }; // <-- The semicolon must be there
 }
 
 TEST_CASE("Parametrized benchmark") {
-    auto input = GENERATE(1, 10, 15, 20);
+    auto input = GENERATE(1, 10, 15, 20, 30);
     BENCHMARK("factorial " + std::to_string(input)) {
         return factorial(input);
     };
